@@ -71,10 +71,10 @@ public class DetailActivity extends AppCompatActivity {
         //Set place of origin
         placeOfOriginText = findViewById(R.id.origin_tv);
         String origin = sandwich.getPlaceOfOrigin();
-        if(origin != null && origin != ""){
+        if(origin != null && !origin.equals("")){
             placeOfOriginText.setText(origin);
         } else {
-            placeOfOriginText.setText("N/A");
+            placeOfOriginText.setText(R.string.origin_not_found);
         }
 
         //Set Also Known As
@@ -86,7 +86,7 @@ public class DetailActivity extends AppCompatActivity {
             }
             akaText.setText(akaText.getText().toString().trim());
         } else {
-            akaText.setText("Other names not available!");
+            akaText.setText(R.string.aka_not_found);
         }
 
         //Set Description
@@ -95,7 +95,7 @@ public class DetailActivity extends AppCompatActivity {
         if (description != null && description != ""){
             descriptionText.setText(description);
         } else {
-            descriptionText.setText("No description available!");
+            descriptionText.setText(R.string.description_not_found);
         }
 
         //Set ingredients
@@ -107,7 +107,7 @@ public class DetailActivity extends AppCompatActivity {
             }
             ingredientsText.setText(ingredientsText.getText().toString().trim());
         } else {
-            akaText.setText("Ingredients not available");
+            akaText.setText(R.string.ingredients_not_found);
         }
     }
 }
